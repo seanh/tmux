@@ -1,0 +1,141 @@
+set -g default-shell /usr/bin/fish
+
+# Enable 256 colours in tmux.
+# This used to be screen-256color, but that broke the Home and End keys
+# in fish. We'll see if xterm-256color works.
+set -g default-terminal "screen-256color"
+
+# Set the number of scrollback lines.
+set -g history-limit 100000
+
+# Keybindings
+# -----------
+
+# Bind Ctrl-a instead of Ctrl-b as prefix key.
+unbind C-b
+set -g prefix C-a
+
+# Bind `Ctrl-a a` to send `Ctrl-a` to an app running inside a tmux session,
+# such as vim, emacs, bash or an embedded tmux session.
+# For example, to open a new window in an embedded tmux session you would do
+# `Ctrl-a a c`.
+bind-key a send-prefix
+
+# Bind `Ctrl-a Ctrl-a` to jump to previous window.
+bind-key C-a last-window
+
+# Bind `Ctrl-a |` and `Ctrl-a -` to split the current window vertically and
+# horizontally.
+bind | split-window -h
+bind - split-window -v
+
+# Keyboard shortcuts for movement using Ctrl.
+# Ctrl-PgDn and Ctrl-PgUp to change windows.
+bind-key -n C-PgDn next-window
+#bind-key -n C-Tab next-window  # FIXME
+bind-key -n C-PgUp previous-window
+#bind-key -n C-S-Tab next-window  # FIXME
+# FIXME: This doesn't work. May need a newer version of tmux.
+bind-key -n C-S-PgDn swap-window -t +1
+bind-key -n C-S-PgUp swap-window -t -1
+# Ctrl+{left,right,up,down} to move between panes.
+bind-key -n C-Left select-pane -L
+bind-key -n C-Right select-pane -R
+bind-key -n C-Up select-pane -U
+bind-key -n C-Down select-pane -D
+
+bind-key -n C-t new-window  # Ctrl-t to open a new window (tab), like Firefox.
+#bind-key -n C-w kill-pane  # Ctrl-w to close pane or window (tab), as Firefox.
+bind-key -n C-h split-window -v  # Ctrl-h split window into panes horizontally.
+bind-key -n C-v split-window -h  # Ctrl-v split window into panes vertically.
+#bind-key -n C-Space command-prompt  # Ctrl-Space open tmux command line.
+
+# Use the function keys to jump to windows,
+bind-key -n F1 select-window -t 1
+bind-key -n F2 select-window -t 2
+bind-key -n F3 select-window -t 3
+bind-key -n F4 select-window -t 4
+bind-key -n F5 select-window -t 5
+bind-key -n F6 select-window -t 6
+bind-key -n F7 select-window -t 7
+bind-key -n F8 select-window -t 8
+bind-key -n F9 select-window -t 9
+bind-key -n F10 select-window -t 10
+bind-key -n F11 select-window -t 11
+bind-key -n F12 select-window -t 12
+
+# TODO: Bind alt+1..8 to select tabs 1..8, and alt+9 to select the last tab,
+# like in Firefox?
+
+# Bind `Ctrl-a r` to reload the tmux.conf file.
+bind r source-file ~/.tmux.conf \; display "~/.tmux.conf reloaded!"
+
+# Bind `Ctrl-a shift-{left,right,up,down}` to resize the current pane.
+# These are repeatable (-r), for example you can do `Ctrl-a shift-left` and
+# then, without releasing shift, keep pressing left, up, down and right to
+# resize the pane as much as you want.
+bind -r S-Left resize-pane -L 1
+bind -r S-Right resize-pane -R 1
+bind -r S-Up resize-pane -U 1
+bind -r S-Down resize-pane -D 1
+
+# Enable scrolling by just pressing Shift-PageUp/Shift-PageDown, with mouse
+# wheel or touchpad, with the scrollbar, etc. So you don't have to enter tmux's
+# copy mode just to scroll up. Unfortunately this behaves weird sometimes, if
+# you want to truly know that you're seeing the right scrollback always use
+# copy mode.
+set -g terminal-overrides 'screen-256color*:smcup@:rmcup@'
+
+# Enable vi-like key bindings for moving around in copy mode.
+# See :list-keys -t vi-copy
+set-window-option -g mode-keys vi
+# Select and copy text with v and y (instead of Space and Enter) like in vim.
+bind -t vi-copy v begin-selection
+bind -t vi-copy y copy-selection
+bind -t vi-copy Escape cancel
+# Paste text with `ctrl-a p`.
+unbind p
+bind p paste-buffer
+# Copy text from tmux's paste buffer into the X clipboard with `ctrl-a y`.
+bind y run "tmux save-buffer - | xclip -i -sel clipboard" \; display "Text copied to X clipboard"
+# Paste text from the system clipboard into tmux with `ctrl-a P`.
+bind P run "tmux set-buffer \"$(xclip -o -sel clipboard)\"; tmux paste-buffer"
+
+# Not really sure what this does but apparently it helps with vim.
+set -s escape-time 1
+
+# Bind `ctrl-a u` to open urlview in a new window with all URLs from the
+# current pane.
+bind-key u capture-pane \; save-buffer /tmp/tmux-buffer \; new-window -n "urlview" '$SHELL -c "urlview < /tmp/tmux-buffer"'
+
+# Status Line
+# -----------
+
+# Set the status line colours.
+# Available colours are: black, red, green, yellow, blue, magenta, cyan, white
+# brightblack, brightred, etc.
+# default
+# colour0 to colour255
+# Hex codes #ffffff (choosea the nearest match from the 255-colour palette)
+#
+# Highlight the active window in the status line.
+set-window-option -g window-status-current-bg black
+set-window-option -g window-status-current-fg yellow
+set-window-option -g window-status-format ' #I:#W#F '
+set-window-option -g window-status-current-format ' #I:#W#F '
+
+# Set the contents of the status line.
+set -g status-left '' # #S is the name of the current tmux session.
+set -g status-right '#(~/bin/,ssh_hostname) [#S]'
+
+# Window activity notifications.
+set-window-option -g monitor-activity off
+set -g visual-activity off
+
+# Rename windows to the names of the commands currently running in them
+# (but not if the window has been given a name manually).
+set-window-option -g automatic-rename on
+
+# Start numbering windows and panes at 1, not 0.
+set -g base-index 1
+set -g pane-base-index 1
