@@ -124,8 +124,8 @@ set -g window-status-bg black
 set -g window-status-fg white
 set-window-option -g window-status-current-bg blue
 set-window-option -g window-status-current-fg black
-set-window-option -g window-status-format ' #I:#W#F '
-set-window-option -g window-status-current-format ' #I:#W#F '
+set-window-option -g window-status-format '#I:#W#{?window_flags,#F, }'
+set-window-option -g window-status-current-format '#I:#W#{?window_flags,#F, }'
 
 # Set the contents of the status line.
 set -g status-left '' # #S is the name of the current tmux session.
