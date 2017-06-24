@@ -30,12 +30,13 @@ bind | split-window -h
 bind - split-window -v
 
 # Keyboard shortcuts for movement using Ctrl.
-# Ctrl-PgDn and Ctrl-PgUp to change windows.
+# Ctrl-{PgUp,PgDn} to change windows.
 bind-key -n C-PgDn next-window
-#bind-key -n C-Tab next-window  # FIXME
 bind-key -n C-PgUp previous-window
-#bind-key -n C-S-Tab next-window  # FIXME
-# FIXME: This doesn't work. May need a newer version of tmux.
+# Shift+Ctrl-{PgUp,PgDn} to move the current window right or left.
+# Note: Shift+Ctrl+{PgUp,PgDn} is bound to change tab by default in
+# Gnome Terminal, you have to change this keyboard shortcut in Gnome Terminal
+# or it won't work in Tmux.
 bind-key -n C-S-PgDn swap-window -t +1
 bind-key -n C-S-PgUp swap-window -t -1
 # Ctrl+{left,right,up,down} to move between panes.
