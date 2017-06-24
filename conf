@@ -130,7 +130,7 @@ set-window-option -g window-status-current-format '#I:#W#{?window_flags,#F, }'
 
 # Set the contents of the status line.
 set -g status-left '' # #S is the name of the current tmux session.
-set -g status-right '#(~/bin/,ssh_hostname) [#S]'
+set -g status-right '#(~/bin/,ssh_hostname)'
 
 # Window activity notifications.
 set-window-option -g monitor-activity off
