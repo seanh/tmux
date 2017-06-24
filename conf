@@ -69,7 +69,7 @@ bind-key -n F12 select-window -t 12
 # like in Firefox?
 
 # Bind `Ctrl-a r` to reload the tmux.conf file.
-bind r source-file ~/.tmux.conf \; display "~/.tmux.conf reloaded!"
+bind r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded!"
 
 # Bind `Ctrl-a shift-{left,right,up,down}` to resize the current pane.
 # These are repeatable (-r), for example you can do `Ctrl-a shift-left` and
