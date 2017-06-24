@@ -90,17 +90,6 @@ set -g terminal-overrides 'screen-256color*:smcup@:rmcup@'
 # Enable vi-like key bindings for moving around in copy mode.
 # See :list-keys -t vi-copy
 set-window-option -g mode-keys vi
-# Select and copy text with v and y (instead of Space and Enter) like in vim.
-bind -t vi-copy v begin-selection
-bind -t vi-copy y copy-selection
-bind -t vi-copy Escape cancel
-# Paste text with `ctrl-a p`.
-unbind p
-bind p paste-buffer
-# Copy text from tmux's paste buffer into the X clipboard with `ctrl-a y`.
-bind y run "tmux save-buffer - | xclip -i -sel clipboard" \; display "Text copied to X clipboard"
-# Paste text from the system clipboard into tmux with `ctrl-a P`.
-bind P run "tmux set-buffer \"$(xclip -o -sel clipboard)\"; tmux paste-buffer"
 
 # Not really sure what this does but apparently it helps with vim.
 set -s escape-time 1
@@ -147,3 +136,5 @@ set -g base-index 1
 set -g pane-base-index 1
 
 set -g mouse on
+
+run-shell ~/.tmux-yank/yank.tmux
