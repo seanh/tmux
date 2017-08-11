@@ -91,13 +91,6 @@ set -g terminal-overrides 'screen-256color*:smcup@:rmcup@'
 # See :list-keys -t vi-copy
 set-window-option -g mode-keys vi
 
-# Not really sure what this does but apparently it helps with vim.
-set -s escape-time 1
-
-# Bind `ctrl-a u` to open urlview in a new window with all URLs from the
-# current pane.
-bind-key u capture-pane \; save-buffer /tmp/tmux-buffer \; new-window -n "urlview" '$SHELL -c "urlview < /tmp/tmux-buffer"'
-
 # Status Line
 # -----------
 
@@ -114,7 +107,7 @@ set -g status-bg black
 set -g status-fg white
 set -g window-status-bg black
 set -g window-status-fg white
-set-window-option -g window-status-current-bg blue
+set-window-option -g window-status-current-bg white
 set-window-option -g window-status-current-fg black
 set-window-option -g window-status-format '#I:#W#{?window_flags,#F, }'
 set-window-option -g window-status-current-format '#I:#W#{?window_flags,#F, }'
@@ -123,10 +116,6 @@ set-window-option -g window-status-current-format '#I:#W#{?window_flags,#F, }'
 set -g status-left '' # #S is the name of the current tmux session.
 set -g status-right '#(~/bin/,ssh_hostname)'
 
-# Window activity notifications.
-set-window-option -g monitor-activity off
-set -g visual-activity off
-
 # Rename windows to the names of the commands currently running in them
 # (but not if the window has been given a name manually).
 set-window-option -g automatic-rename on
@@ -134,7 +123,5 @@ set-window-option -g automatic-rename on
 # Start numbering windows and panes at 1, not 0.
 set -g base-index 1
 set -g pane-base-index 1
-
-set -g mouse on
 
 run-shell ~/.tmux-yank/yank.tmux
