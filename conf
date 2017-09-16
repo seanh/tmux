@@ -99,18 +99,19 @@ set-window-option -g mode-keys vi
 # brightblack, brightred, etc.
 # default
 # colour0 to colour255
-# Hex codes #ffffff (choosea the nearest match from the 255-colour palette)
+# Hex codes "#ffffff" (chooses the nearest match from the 255-colour palette)
 #
 # Highlight the active window in the status line.
 set -g status-position top
-set -g status-bg default
-set -g status-fg white
+set -g status-bg "#333333"
+set -g status-fg "#999999"
 set -g window-status-bg default
-set -g window-status-fg white
-set-window-option -g window-status-current-bg white
-set-window-option -g window-status-current-fg black
-set-window-option -g window-status-format '#I:#W#{?window_flags,#F, }'
-set-window-option -g window-status-current-format '#I:#W#{?window_flags,#F, }'
+set -g window-status-fg default
+set-window-option -g window-status-current-bg "#555555"
+set-window-option -g window-status-current-fg "#BBBBBB"
+set-window-option -g window-status-format ' #I:#W '
+set-window-option -g window-status-current-format ' #I:#W '
+set -g window-status-separator ''  # Remove space between window titles.
 
 # Set the contents of the status line.
 set -g status-left '' # #S is the name of the current tmux session.
