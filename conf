@@ -103,8 +103,8 @@ set -g window-status-bg default
 set -g window-status-fg default
 set-window-option -g window-status-current-bg "#555555"
 set-window-option -g window-status-current-fg "#BBBBBB"
-set-window-option -g window-status-format ' #I:#W '
-set-window-option -g window-status-current-format ' #I:#W '
+set-window-option -g window-status-format ' #I:#W#F '
+set-window-option -g window-status-current-format ' #I:#W#F '
 set -g window-status-separator ''  # Remove space between window titles.
 
 # Set the contents of the status line.
