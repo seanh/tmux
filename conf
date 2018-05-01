@@ -106,7 +106,7 @@ set -g window-status-separator ''  # Remove space between window titles.
 
 # Set the contents of the status line.
 set -g status-left '' # #S is the name of the current tmux session.
-set -g status-right '#(~/bin/,ssh_hostname)'
+set -g status-right ''
 
 # Rename windows to the names of the commands currently running in them
 # (but not if the window has been given a name manually).
