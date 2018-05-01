@@ -47,10 +47,6 @@ bind-key -n C-Up select-pane -U
 bind-key -n C-Down select-pane -D
 
 bind-key -n C-t new-window  # Ctrl-t to open a new window (tab), like Firefox.
-#bind-key -n C-w kill-pane  # Ctrl-w to close pane or window (tab), as Firefox.
-bind-key -n C-h split-window -v  # Ctrl-h split window into panes horizontally.
-bind-key -n C-v split-window -h  # Ctrl-v split window into panes vertically.
-#bind-key -n C-Space command-prompt  # Ctrl-Space open tmux command line.
 
 # Use the function keys to jump to windows,
 bind-key -n F1 select-window -t 1
