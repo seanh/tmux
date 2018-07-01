@@ -94,14 +94,14 @@ set-window-option -g mode-keys vi
 # Highlight the active window in the status line.
 set -g status-position top
 set -g status-bg default
-set -g status-fg "#888888"
+set -g status-fg default
 set -g window-status-bg default
 set -g window-status-fg default
 set-window-option -g window-status-current-bg default
-set-window-option -g window-status-current-fg "#dddddd"
+set-window-option -g window-status-current-fg default
 set-window-option -g window-status-current-attr bold
-set-window-option -g window-status-format ' #I:#W#F '
-set-window-option -g window-status-current-format ' #I:#W#F '
+set-window-option -g window-status-format '[#W#F]'
+set-window-option -g window-status-current-format '[#W#F]'
 set -g window-status-separator ''  # Remove space between window titles.
 
 # Set the contents of the status line.
