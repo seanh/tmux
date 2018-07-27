@@ -105,16 +105,16 @@ set-window-option -g mode-keys vi
 # Hex codes "#ffffff" (chooses the nearest match from the 255-colour palette)
 #
 # Highlight the active window in the status line.
-set -g status-position top
+set -g status-position bottom
 set -g status-bg default
 set -g status-fg default
 set -g window-status-bg default
 set -g window-status-fg default
 set-window-option -g window-status-current-bg default
 set-window-option -g window-status-current-fg default
-set-window-option -g window-status-current-attr bold
-set-window-option -g window-status-format '#I:#W#F '
-set-window-option -g window-status-current-format '#I:#W#F '
+set-window-option -g window-status-current-attr none
+set-window-option -g window-status-format ' #I:#W '
+set-window-option -g window-status-current-format '[#I:#W]'
 set -g window-status-separator ''  # Remove space between window titles.
 
 # Set the contents of the status line.
