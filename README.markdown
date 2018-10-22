@@ -14,6 +14,6 @@ Installation:
 
 1. `sudo apt install -y tmux`
 
-1. `git clone git@github.com:seanh/tmux.git ~/.tmux`
+1. `git clone git@github.com:seanh/tmux.git ~/Projects/tmux`
 
-1. `ln -s ~/.tmux/conf ~/.tmux.conf`
+1. `ln -s ~/Projects/tmux/conf ~/.tmux.conf`
