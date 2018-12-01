@@ -1,17 +1,18 @@
 set -g default-shell /usr/bin/fish
-
-# Enable 256 colours in tmux.
-# This used to be screen-256color, but that broke the Home and End keys
-# in fish. We'll see if xterm-256color works.
 set -g default-terminal "screen-256color"
 set-option -ga terminal-overrides ",xterm-256color:Tc,"
-
-# Set the number of scrollback lines.
 set -g history-limit 100000
 
-# Keybindings
-# -----------
+# Enable mouse support.
+# This enables switching pane focus by clicking on panes, resizing panes by
+# clicking and dragging, changing windows (tabs) by clicking on the tabs,
+# scrolling with the scrollwheel. BUT this disables the mouse support of Vim
+# and other apps when they're running in tmux, because tmux swallows the mouse
+# events.
+set -g mouse on
 
+# Keyboard Shortcuts
+# ------------------
 # Bind Ctrl-a instead of Ctrl-b as prefix key.
 unbind C-b
 set -g prefix C-a
@@ -30,23 +31,28 @@ bind-key C-a last-window
 bind | split-window -h
 bind - split-window -v
 
-# Keyboard shortcuts for movement using Ctrl.
-# Ctrl-{PgUp,PgDn} to change windows.
+bind-key -n C-t new-window  # Ctrl-t to open a new window (tab), like in browsers.
+
+# Ctrl-{PgUp,PgDn} to change windows (tabs) like in browsers.
 bind-key -n C-PgDn next-window
 bind-key -n C-PgUp previous-window
-# Shift+Ctrl-{PgUp,PgDn} to move the current window right or left.
+
+# Shift+Ctrl-{PgUp,PgDn} to move the current window (tab) right or left like in
+# browsers.
 # Note: Shift+Ctrl+{PgUp,PgDn} is bound to change tab by default in
 # Gnome Terminal, you have to change this keyboard shortcut in Gnome Terminal
 # or it won't work in Tmux.
 bind-key -n C-S-PgDn swap-window -t +1
 bind-key -n C-S-PgUp swap-window -t -1
+
+# TODO: Bind alt+1..8 to select tabs 1..8, and alt+9 to select the last tab,
+# like in browsers.
+
 # Ctrl+{left,right,up,down} to move between panes.
 bind-key -n C-Left select-pane -L
 bind-key -n C-Right select-pane -R
 bind-key -n C-Up select-pane -U
 bind-key -n C-Down select-pane -D
-
-bind-key -n C-t new-window  # Ctrl-t to open a new window (tab), like Firefox.
 
 # Use the function keys to jump to windows,
 bind-key -n  F1 if-shell -F '#{==:#I,1}' 'last-window' 'select-window -t :1'
@@ -61,7 +67,6 @@ bind-key -n  F9 if-shell -F '#{==:#I,9}' 'last-window' 'select-window -t :9'
 bind-key -n  F10 if-shell -F '#{==:#I,10}' 'last-window' 'select-window -t :10'
 bind-key -n  F11 if-shell -F '#{==:#I,11}' 'last-window' 'select-window -t :11'
 bind-key -n  F12 if-shell -F '#{==:#I,12}' 'last-window' 'select-window -t :12'
-
 bind-key F1 send-keys F1
 bind-key F2 send-keys F2
 bind-key F3 send-keys F3
@@ -74,9 +79,6 @@ bind-key F9 send-keys F9
 bind-key F10 send-keys F10
 bind-key F11 send-keys F11
 bind-key F12 send-keys F12
-
-# TODO: Bind alt+1..8 to select tabs 1..8, and alt+9 to select the last tab,
-# like in Firefox?
 
 # Bind `Ctrl-a r` to reload the tmux.conf file.
 bind r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded!"
@@ -96,29 +98,20 @@ set-window-option -g mode-keys vi
 
 # Status Line
 # -----------
-
-# Set the status line colours.
-# Available colours are: black, red, green, yellow, blue, magenta, cyan, white
-# brightblack, brightred, etc.
-# default
-# colour0 to colour255
-# Hex codes "#ffffff" (chooses the nearest match from the 255-colour palette)
-#
-# Highlight the active window in the status line.
-set -g status-position bottom
+set -g status-position top
 set -g status-bg default
 set -g status-fg default
 set -g window-status-bg default
 set -g window-status-fg default
-set-window-option -g window-status-current-bg default
-set-window-option -g window-status-current-fg default
+set-window-option -g window-status-current-bg white
+set-window-option -g window-status-current-fg black
 set-window-option -g window-status-current-attr none
 set-window-option -g window-status-format ' #I:#W '
-set-window-option -g window-status-current-format '[#I:#W]'
+set-window-option -g window-status-current-format ' #I:#W '
 set -g window-status-separator ''  # Remove space between window titles.
 
 # Set the contents of the status line.
-set -g status-left '' # #S is the name of the current tmux session.
+set -g status-left ''
 set -g status-right ''
 
 # Rename windows to the names of the commands currently running in them
