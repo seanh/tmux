@@ -1,50 +1,30 @@
 set -g default-shell /usr/bin/fish
-set -g default-terminal "screen-256color"
 set-option -ga terminal-overrides ",xterm-256color:Tc,"
 set -g history-limit 100000
 
 # Enable mouse support.
 # This enables switching pane focus by clicking on panes, resizing panes by
 # clicking and dragging, changing windows (tabs) by clicking on the tabs,
-# scrolling with the scrollwheel. BUT this disables the mouse support of Vim
-# and other apps when they're running in tmux, because tmux swallows the mouse
-# events.
+# scrolling with the scrollwheel.
+# BUT this disables the mouse support of your terminal emulator for selecting
+# text, right-clicking to get the context menu (including copy command) etc.
+# You can get around this by holding down Shift while using the mouse to
+# "click through" to the termuinal emulator.
+# To send mouse commands to the terminal program running inside tmux (e.g. to
+# resize vim splits with the mouse) ... ?
 set -g mouse on
 
 # Keyboard Shortcuts
 # ------------------
 # Bind Ctrl-a instead of Ctrl-b as prefix key.
-unbind C-b
 set -g prefix C-a
 
-# Bind `Ctrl-a a` to send `Ctrl-a` to an app running inside a tmux session,
-# such as vim, emacs, bash or an embedded tmux session.
-# For example, to open a new window in an embedded tmux session you would do
-# `Ctrl-a a c`.
-bind-key a send-prefix
-
-# Bind `Ctrl-a Ctrl-a` to jump to previous window.
-bind-key C-a last-window
-
-# Bind `Ctrl-a |` and `Ctrl-a -` to split the current window vertically and
-# horizontally.
-bind | split-window -h
-bind - split-window -v
-
-bind-key -n C-t new-window  # Ctrl-t to open a new window (tab), like in browsers.
-
-# Ctrl-{PgUp,PgDn} to change windows (tabs) like in browsers.
+# Browser-like tab (window) controls.
+bind-key -n C-t new-window
 bind-key -n C-PgDn next-window
 bind-key -n C-PgUp previous-window
-
-# Shift+Ctrl-{PgUp,PgDn} to move the current window (tab) right or left like in
-# browsers.
-# Note: Shift+Ctrl+{PgUp,PgDn} is bound to change tab by default in
-# Gnome Terminal, you have to change this keyboard shortcut in Gnome Terminal
-# or it won't work in Tmux.
 bind-key -n C-S-PgDn swap-window -t +1
 bind-key -n C-S-PgUp swap-window -t -1
-
 # TODO: Bind alt+1..8 to select tabs 1..8, and alt+9 to select the last tab,
 # like in browsers.
 
@@ -80,20 +60,7 @@ bind-key F10 send-keys F10
 bind-key F11 send-keys F11
 bind-key F12 send-keys F12
 
-# Bind `Ctrl-a r` to reload the tmux.conf file.
-bind r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded!"
-
-# Bind `Ctrl-a shift-{left,right,up,down}` to resize the current pane.
-# These are repeatable (-r), for example you can do `Ctrl-a shift-left` and
-# then, without releasing shift, keep pressing left, up, down and right to
-# resize the pane as much as you want.
-bind -r S-Left resize-pane -L 1
-bind -r S-Right resize-pane -R 1
-bind -r S-Up resize-pane -U 1
-bind -r S-Down resize-pane -D 1
-
 # Enable vi-like key bindings for moving around in copy mode.
-# See :list-keys -t vi-copy
 set-window-option -g mode-keys vi
 
 # Status Line
@@ -106,13 +73,13 @@ set -g window-status-fg default
 set-window-option -g window-status-current-bg white
 set-window-option -g window-status-current-fg black
 set-window-option -g window-status-current-attr none
-set-window-option -g window-status-format ' #I:#W '
-set-window-option -g window-status-current-format ' #I:#W '
+set-window-option -g window-status-format ' #I:#W#F '
+set-window-option -g window-status-current-format ' #I:#W#F '
 set -g window-status-separator ''  # Remove space between window titles.
-
-# Set the contents of the status line.
 set -g status-left ''
-set -g status-right ''
+set -g status-right '#{prefix_highlight}'
+set -g @prefix_highlight_show_copy_mode 'on'
+set -g @prefix_highlight_copy_mode_attr 'fg=default,bg=blue'
 
 # Rename windows to the names of the commands currently running in them
 # (but not if the window has been given a name manually).
@@ -122,4 +89,8 @@ set-window-option -g automatic-rename on
 set -g base-index 1
 set -g pane-base-index 1
 
+run-shell ~/.tmux-sensible/sensible.tmux
 run-shell ~/.tmux-yank/yank.tmux
+run-shell ~/.tmux-prefix-highlight/prefix_highlight.tmux
+run-shell ~/.tmux-pain-control/pain_control.tmux
+run-shell ~/.tmux-sessionist/sessionist.tmux
