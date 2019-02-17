@@ -76,8 +76,8 @@ set-window-option -g window-status-current-attr none
 set-window-option -g window-status-format ' #I:#W#F '
 set-window-option -g window-status-current-format ' #I:#W#F '
 set -g window-status-separator ''  # Remove space between window titles.
-set -g status-left '#S '
-set -g status-right '#{prefix_highlight}'
+set -g status-left ''
+set -g status-right '#{prefix_highlight}#[bg=blue,fg=brightwhite] #S '
 set -g @prefix_highlight_show_copy_mode 'on'
 set -g @prefix_highlight_copy_mode_attr 'fg=default,bg=blue'
 
