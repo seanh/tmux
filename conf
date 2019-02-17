@@ -89,8 +89,31 @@ set-window-option -g automatic-rename on
 set -g base-index 1
 set -g pane-base-index 1
 
+# Prefix+R to source this .tmux.conf file.
 run-shell ~/.tmux-sensible/sensible.tmux
+
+# Prefix+y copies what's on your shell's command line to the clipboard.
+# Prefix+Y copies the current pane's working directory to the command line.
+# In copy mode y copies the current selection to the clipboard, and
+# Y pastes the current selection onto the command line.
 run-shell ~/.tmux-yank/yank.tmux
-run-shell ~/.tmux-prefix-highlight/prefix_highlight.tmux
+set -g @yank_action 'copy-pipe'  # Don't automatically leave copy mode after yanking text.
+
+# Prefix+h,j,k,l or arrow keys to move between panes.
+# Prefix+H,J,K,L resizes panes (but Shift+arrows doesn't work).
+# Prefix+| or - splits the current pane vertically or horizontally.
+# Prefix+\ or Prefix+_ does a full width/height split horizontally or vertically.
 run-shell ~/.tmux-pain-control/pain_control.tmux
+# Prefix+< or > moves the current pane.
+bind-key -r "<" swap-pane -t -1
+bind-key -r ">" swap-pane -t +1
+
+# Prefix+g prompts for a session name and changes to that session.
+# Prefix+C to create a new named session.
+# Prefix+X to kill the current session without exiting tmux.
+# Prefix+S change to the last session.
+# Prefix+@ promotes the current pane into a new session.
+# (Note that prefix+! already promotes the current pane into a new window, too.)
 run-shell ~/.tmux-sessionist/sessionist.tmux
+
+run-shell ~/.tmux-prefix-highlight/prefix_highlight.tmux
