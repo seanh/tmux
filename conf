@@ -82,6 +82,7 @@ set-window-option -ag window-status-current-format '#{window_index}/#{session_wi
 set -g window-status-separator ''  # Remove space between window titles.
 set -g status-left ''
 set -g status-right ''
+set -g status off
 
 set -g set-titles on
 set -g set-titles-string '#{pane_title}'
