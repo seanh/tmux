@@ -83,6 +83,12 @@ set -g window-status-separator ''  # Remove space between window titles.
 set -g status-left ''
 set -g status-right ''
 
+set -g set-titles on
+set -g set-titles-string '#{pane_title}'
+set -ag set-titles-string '#{?window_zoomed_flag,[Z] , }'
+set -ag set-titles-string '#{window_index}/#{session_windows}'
+set -ag set-titles-string '#{?session_alerts, #{session_alerts},}'
+
 set -g @prefix_highlight_show_copy_mode 'on'
 set -g @prefix_highlight_copy_mode_attr 'fg=default,bg=blue'
 
