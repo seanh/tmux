@@ -85,7 +85,7 @@ set -g status-right ''
 set -g status off
 
 set -g set-titles on
-set -g set-titles-string '#{pane_title}'
+set -g set-titles-string '#{window_name}'
 set -ag set-titles-string '#{?window_zoomed_flag,[Z] , }'
 set -ag set-titles-string '#{window_index}/#{session_windows}'
 set -ag set-titles-string '#{?session_alerts, #{session_alerts},}'
