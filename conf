@@ -89,6 +89,7 @@ set -g set-titles-string '#{window_name}'
 set -ag set-titles-string '#{?window_zoomed_flag,[Z] , }'
 set -ag set-titles-string '#{window_index}/#{session_windows}'
 set -ag set-titles-string '#{?session_alerts, #{session_alerts},}'
+set -ag set-titles-string '#{?client_prefix, ^A,}'
 
 set -g @prefix_highlight_show_copy_mode 'on'
 set -g @prefix_highlight_copy_mode_attr 'fg=default,bg=blue'
