@@ -65,30 +65,33 @@ set-window-option -g mode-keys vi
 
 # Status Line
 # -----------
-set -g status-position top
+set -g status-position bottom
+set -g status-justify left
 set -g status-bg default
 set -g status-fg default
 set -g window-status-bg default
 set -g window-status-fg default
-set-window-option -g window-status-current-bg white
-set-window-option -g window-status-current-fg black
-set-window-option -g window-status-current-attr none
-set-window-option -g window-status-format ' #I:#W#F '
-set-window-option -g window-status-current-format ' #I:#W#F '
+set-window-option -g window-status-current-bg '#5294e2'
+set-window-option -g window-status-current-fg white
+set-window-option -g window-status-current-attr bold
+set-window-option -g window-status-last-bg '#cc575d'
+set-window-option -g window-status-last-fg white
+set-window-option -g window-status-last-attr bold
+set-window-option -g window-status-format ' #I #W#F '
+set-window-option -g window-status-current-format ' #I #W#F '
 set -g window-status-separator ''  # Remove space between window titles.
 set -g status-left ''
-set -g status-right ''
-set -g status off
+set -g status-right '#{prefix_highlight}'
+set -g status on
 
 set -g set-titles on
-set -g set-titles-string '#{window_name}'
-set -ag set-titles-string '#{?window_zoomed_flag,[Z] , }'
-set -ag set-titles-string '#{window_index}/#{session_windows}'
+set -g set-titles-string '#S'
 set -ag set-titles-string '#{?session_alerts, #{session_alerts},}'
-set -ag set-titles-string '#{?client_prefix, ^A,}'
 
+set -g @prefix_highlight_fg 'white,bold'
+set -g @prefix_highlight_bg '#5294e2'
 set -g @prefix_highlight_show_copy_mode 'on'
-set -g @prefix_highlight_copy_mode_attr 'fg=default,bg=blue'
+set -g @prefix_highlight_copy_mode_attr 'fg=white,bold,bg=#cc575d'
 
 # Rename windows to the names of the commands currently running in them
 # (but not if the window has been given a name manually).
