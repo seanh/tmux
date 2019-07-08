@@ -85,7 +85,7 @@ set -g status-right '#{prefix_highlight}'
 set -g status on
 
 set -g set-titles on
-set -g set-titles-string '#S'
+set -g set-titles-string 'tmux (#S)'
 set -ag set-titles-string '#{?session_alerts, #{session_alerts},}'
 
 set -g @prefix_highlight_fg 'white,bold'
