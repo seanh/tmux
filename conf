@@ -103,6 +103,11 @@ set -g pane-base-index 1
 
 # Prefix+R to source this .tmux.conf file.
 run-shell ~/.tmux-sensible/sensible.tmux
+# Swap tmux-sensible's `Ctrl-a a` (last-window) and `Ctrl-a Ctrl-a` (send-prefix) so that:
+# `Ctrl-a Ctrl-a` goes to the last window.
+# `Ctrl-a a` sends Ctrl-a into a nested tmux.
+bind-key C-a last-window
+bind-key a send-prefix
 
 # Prefix+y copies what's on your shell's command line to the clipboard.
 # Prefix+Y copies the current pane's working directory to the command line.
