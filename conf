@@ -19,6 +19,13 @@ set -g mouse on
 # Bind Ctrl-a instead of Ctrl-b as prefix key.
 set -g prefix C-a
 
+# Make Shift-Page Up and Shift-Page Down scroll, as they normally would in
+# Gnome Terminal. Note that once in copy mode just Page Up and Page Down on
+# their own will scroll, you don't have to keep holding down Shift, but you can
+# do if you want.
+bind -n S-Pageup copy-mode -u
+bind -n S-Pagedown send-keys Pagedown
+
 # Browser-like tab (window) controls.
 bind-key -n C-t new-window
 bind-key -n C-PgDn next-window
