@@ -78,12 +78,8 @@ set -g status-bg default
 set -g status-fg default
 set -g window-status-bg default
 set -g window-status-fg default
-set-window-option -g window-status-current-bg '#5294e2'
-set-window-option -g window-status-current-fg white
-set-window-option -g window-status-current-attr bold
-set-window-option -g window-status-last-bg '#cc575d'
-set-window-option -g window-status-last-fg white
-set-window-option -g window-status-last-attr bold
+set-window-option -g window-status-current-bg white
+set-window-option -g window-status-current-fg black
 set-window-option -g window-status-format ' #I #W#F '
 set-window-option -g window-status-current-format ' #I #W#F '
 set -g window-status-separator ''  # Remove space between window titles.
