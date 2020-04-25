@@ -72,29 +72,12 @@ set-window-option -g mode-keys vi
 
 # Status Line
 # -----------
-set -g status-position bottom
-set -g status-justify left
-set -g status-bg default
-set -g status-fg default
-set -g window-status-bg default
-set -g window-status-fg default
-set-window-option -g window-status-current-bg white
-set-window-option -g window-status-current-fg black
-set-window-option -g window-status-format ' #I #W#F '
-set-window-option -g window-status-current-format ' #I #W#F '
-set -g window-status-separator ''  # Remove space between window titles.
-set -g status-left ''
+set -g status-position top
+set -g status-style "bg=default fg=#ffffff"
 set -g status-right '#{prefix_highlight}'
-set -g status on
 
 set -g set-titles on
 set -g set-titles-string 'tmux (#S)'
-set -ag set-titles-string '#{?session_alerts, #{session_alerts},}'
-
-set -g @prefix_highlight_fg 'white,bold'
-set -g @prefix_highlight_bg '#5294e2'
-set -g @prefix_highlight_show_copy_mode 'on'
-set -g @prefix_highlight_copy_mode_attr 'fg=white,bold,bg=#cc575d'
 
 # Rename windows to the names of the commands currently running in them
 # (but not if the window has been given a name manually).
@@ -106,7 +89,8 @@ set -g pane-base-index 1
 
 # Prefix+R to source this .tmux.conf file.
 run-shell ~/.tmux-sensible/sensible.tmux
-# Swap tmux-sensible's `Ctrl-a a` (last-window) and `Ctrl-a Ctrl-a` (send-prefix) so that:
+# Swap tmux-sensible's `Ctrl-a a` (last-window) and `Ctrl-a Ctrl-a`
+# (send-prefix) so that:
 # `Ctrl-a Ctrl-a` goes to the last window.
 # `Ctrl-a a` sends Ctrl-a into a nested tmux.
 bind-key C-a last-window
@@ -126,7 +110,7 @@ set -g @yank_action 'copy-pipe'  # Don't automatically leave copy mode after yan
 run-shell ~/.tmux-pain-control/pain_control.tmux
 # Prefix+< or > moves the current pane.
 bind-key -r "<" swap-pane -t -1
-bind-key -r ">" swap-pane -t +1
+bind-key -r ">" swap-pane -t +2
 
 # Prefix+g prompts for a session name and changes to that session.
 # Prefix+C to create a new named session.
