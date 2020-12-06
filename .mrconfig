@@ -1,0 +1,14 @@
+[plugins/tmux-sensible]
+checkout = git clone 'https://github.com/tmux-plugins/tmux-sensible' 'tmux-sensible'
+
+[plugins/tmux-yank]
+checkout = git clone 'https://github.com/tmux-plugins/tmux-yank' 'tmux-yank'
+
+[plugins/tmux-prefix-highlight]
+checkout = git clone 'https://github.com/tmux-plugins/tmux-prefix-highlight' 'tmux-prefix-highlight'
+
+[plugins/tmux-pain-control]
+checkout = git clone 'https://github.com/tmux-plugins/tmux-pain-control' 'tmux-pain-control'
+
+[plugins/tmux-sessionist]
+checkout = git clone 'https://github.com/tmux-plugins/tmux-sessionist' 'tmux-sessionist'
