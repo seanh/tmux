@@ -12,7 +12,9 @@ Install [fish shell](https://github.com/seanh/fish), my tmux.conf sets it as tmu
 default shell.  
 FIXME: Set fish as tmux's default shell only if fish is installed.
 
-Then:
+Enable Ubuntu's "Community-maintained free and open-source
+software (universe)" option in the **Software & Updates** app,
+then:
 
 ```terminal
 sudo apt install --yes myrepos git tmux
