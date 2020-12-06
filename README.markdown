@@ -17,7 +17,6 @@ Then:
 ```terminal
 sudo apt install --yes myrepos git tmux
 git clone https://github.com/seanh/tmux.git ~/.tmux
-cd ~/.tmux
-mr -j 5 checkout
+mr -c ~/.tmux/.mrconfig -j 5 update
 ln -s ~/.tmux/tmux.conf ~/.tmux.conf
 ```
