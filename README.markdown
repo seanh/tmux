@@ -8,7 +8,7 @@ Installation
 
 ### Ubuntu 20.04
 
-Install [fish shell](https://fishshell.com/), my tmux.conf sets it as tmux's
+Install [fish shell](https://github.com/seanh/fish), my tmux.conf sets it as tmux's
 default shell.  
 FIXME: Set fish as tmux's default shell only if fish is installed.
 
