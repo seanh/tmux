@@ -3,17 +3,18 @@ My tmux Config
 
 My [tmux](https://tmux.github.io/) config files.
 
-Installation:
+Installation
+------------
 
-1. `sudo apt install -y git`
+### Ubuntu 20.04
 
-1. Install [fish shell](https://fishshell.com/), my tmux.conf sets it as
-   tmux's default shell.
+Install [fish shell](https://fishshell.com/), my tmux.conf sets it as tmux's
+default shell.  
+FIXME: Set fish as tmux's default shell only if fish is installed.
 
-   FIXME: Set fish as tmux's default shell only if fish is installed.
+Then:
 
-1. `sudo apt install -y tmux`
-
-1. `git clone git@github.com:seanh/tmux.git ~/Projects/tmux`
-
-1. `ln -s ~/Projects/tmux/conf ~/.tmux.conf`
+```terminal
+sudo apt install --yes git tmux
+git clone https://github.com/seanh/tmux.git ~/.tmux
+```
