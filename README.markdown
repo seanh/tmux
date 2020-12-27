@@ -22,6 +22,18 @@ git clone https://github.com/seanh/tmux.git ~/.tmux
 ~/.tmux/install
 ```
 
+To update all the plugins:
+
+```terminal
+~/.tmux/plugins/tpm/bin/update_plugins all
+```
+
+To delete removed plugins:
+
+```terminal
+~/.tmux/plugins/tpm/bin/clean_plugins
+```
+
 Usage
 -----
 
