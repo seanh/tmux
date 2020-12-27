@@ -22,6 +22,13 @@ git clone https://github.com/seanh/tmux.git ~/.tmux
 ~/.tmux/install
 ```
 
+To install new plugins (that get added to `tmux.conf` after you've ran the
+`install` script above):
+
+```terminal
+~/.tmux/plugins/tpm/bin/install_plugins
+```
+
 To update all the plugins:
 
 ```terminal
