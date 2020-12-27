@@ -19,3 +19,29 @@ then:
 ```terminal
 sudo apt install --yes myrepos git tmux && git clone https://github.com/seanh/tmux.git ~/.tmux && mr -c ~/.tmux/.mrconfig -j 5 update && ln -s ~/.tmux/tmux.conf ~/.tmux.conf
 ```
+
+Once in tmux you need to do <kbd><kbd>Ctrl</kbd> + <kbd>b</kbd> <kbd>I</kbd></kbd>
+once to get [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) to
+install the plugins.
+
+Usage
+-----
+
+See [Copy & Paste in tmux](https://www.seanh.cc/2020/12/27/copy-and-paste-in-tmux/)
+for the full details on copy & paste.
+
+### Copying into the system clipboard
+
+* Select some text with the mouse (this already copies it into the primary selection)
+  then click <kbd>y</kbd> to also copy it to the system clipboard
+* Or select some text with the keyboard in copy mode then click <kbd>y</kbd>
+
+### Pasting from the system clipboard
+
+Just use your terminal emulator's paste command:
+<kbd><kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>v</kbd></kbd> in GNOME Terminal
+or st.
+
+### Pasting from the primary selection
+
+<kbd><kbd>Shift</kbd> + <kbd>Middle Mouse Button</kbd></kbd>
