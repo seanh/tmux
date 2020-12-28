@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 set -e
 
-sudo apt install --yes myrepos tmux
+sudo apt install --yes myrepos tmux xsel
 mr -d ~/.tmux -c ~/.tmux/.mrconfig -j 5 checkout
 ln -s ~/.tmux/tmux.conf ~/.tmux.conf
 ~/.tmux/plugins/tpm/bin/install_plugins
