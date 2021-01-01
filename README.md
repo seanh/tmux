@@ -55,8 +55,14 @@ Links
   * [tmux-better-mouse-mode](https://github.com/NHDaly/tmux-better-mouse-mode)
   * [tmux-open](https://github.com/tmux-plugins/tmux-open)
 
-Usage
------
+Keyboard Shortcuts
+------------------
+
+A non-exhaustive list of some of the keyboard shortcuts I use more often.
+Some of these are custom key bindings from my [`tmux.conf`](tmux.conf) file,
+others are provided by the plugins I use,
+and some are default tmux bindings.
+The full list of all bindings can be found by running `tmux lsk`.
 
 ### Prefix key
 
