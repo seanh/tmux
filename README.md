@@ -164,6 +164,7 @@ I use tmux's vi-style copy mode keybindings. When in copy mode:
 File and URL opening shortcuts from [tmux-open](https://github.com/tmux-plugins/tmux-open):
 
 * <kbd>o</kbd> in copy mode opens the selected file or URL using `open` (macOS) or `xdg-open` (Linux)
+  (hint: double-click on a URL with the mouse and then hit <kbd>o</kbd>)
 * <kbd><kbd>Ctrl</kbd> + <kbd>o</kbd></kbd> opens the selected file in `$EDITOR`
 * <kbd><kbd>Ctrl</kbd> + <kbd>s</kbd></kbd> searches for the selected text in a browser
 
