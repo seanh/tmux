@@ -92,6 +92,12 @@ See [Copy & Paste in tmux](https://www.seanh.cc/2020/12/27/copy-and-paste-in-tmu
 * <kbd>Enter</kbd> copies the selected text into a tmux paste buffer and exits copy mode
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>]</kbd></kbd> pastes from the most recent tmux paste buffer
 
+More copy & paste shortcuts from [tmux-yank](https://github.com/tmux-plugins/tmux-yank):
+
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>y</kbd></kbd> copies the current command line to the clipboard
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>y</kbd></kbd></kbd> copies the current working directory to the clipboard
+* <kbd><kbd>Shift</kbd> + <kbd>y</kbd></kbd> in copy mode copies the current selection and pastes it onto the command line
+
 ### Copy mode
 
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>[</kbd></kbd> enters copy mode
