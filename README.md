@@ -71,6 +71,8 @@ See [Copy & Paste in tmux](https://www.seanh.cc/2020/12/27/copy-and-paste-in-tmu
 * <kbd>y</kbd> or <kbd><kbd>Ctrl</kbd> + <kbd>c</kbd></kbd> copies the selected text into the system clipboard
 * To paste from the system clipboard just use your terminal emulator's paste command:
   <kbd><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>v</kbd></kbd> in GNOME Terminal or st
+* <kbd>Enter</kbd> copies the selected text into a tmux paste buffer and exits copy mode
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>]</kbd></kbd> pastes from the most recent tmux paste buffer
 
 ### Copy mode
 
