@@ -54,8 +54,11 @@ Either <kbd><kbd>Ctrl</kbd> + <kbd>a</kbd></kbd> or <kbd><kbd>Ctrl</kbd> + <kbd>
   and right
 * <kbd><kbd>Alt</kbd> + <kbd>1</kbd> &hellip; <kbd>8</kbd></kbd> jumps to tab 1&hellip;8
 * <kbd><kbd>Alt</kbd> + <kbd>9</kbd></kbd> jumps to the last tab
-* <kbd>F11</kbd> zooms or unzooms the current pane
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd></kbd> goes back to the tab you were last in
+
+### Panes
+
+* <kbd>F11</kbd> zooms or unzooms the current pane
 
 ### Copy & Paste
 
