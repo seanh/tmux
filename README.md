@@ -100,8 +100,6 @@ Pane commands from [tmux-pain-control](https://github.com/tmux-plugins/tmux-pain
 
 ### Copy & Paste
 
-See [Copy & Paste in tmux](https://www.seanh.cc/2020/12/27/copy-and-paste-in-tmux/) for the full details on copy & paste.
-
 * Click-and-drag to select text and copy it into the primary selection
 * Double-click on a word to select the word and copy it into the primary selection
 * Triple-click on a line to select the line and copy it into the primary selection
