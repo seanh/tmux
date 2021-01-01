@@ -97,3 +97,14 @@ See [Copy & Paste in tmux](https://www.seanh.cc/2020/12/27/copy-and-paste-in-tmu
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>[</kbd></kbd> enters copy mode
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>Page Up</kbd></kbd> or just <kbd><kbd>Shift</kbd> + <kbd>Page Up</kbd></kbd> enters copy mode and scrolls up by one page
 * You can also enter copy mode by scrolling with the mouse wheel or by clicking-and-dragging, double-clicking or triple-clicking with the <kbd>Left Mouse Button</kbd>
+
+### Reloading
+
+*  <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>r</kbd></kbd></kbd> reloads the `~/.tmux.conf` file
+   (you can also just run `tmux source ~/.tmux.conf`)
+*  <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>i</kbd></kbd></kbd> installs new plugins from the `~/.tmux.conf` file
+   (you can also just run `~/.tmux/plugins/tpm/bin/install_plugins`)
+*  <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>u</kbd></kbd></kbd> upgrades plugins
+   (you can also just run `~/.tmux/plugins/tpm/bin/update_plugins all`)
+*  <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Alt</kbd> + <kbd>u</kbd></kbd></kbd> uninstalls plugins that're no longer in the `~/.tmux.conf` file
+   (you can also just run `~/.tmux/plugins/tpm/bin/clean_plugins`)
