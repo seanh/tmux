@@ -37,6 +37,24 @@ To delete removed plugins:
 ~/.tmux/plugins/tpm/bin/clean_plugins
 ```
 
+Links
+-----
+
+* [Copy and Paste in tmux](https://www.seanh.cc/2020/12/27/copy-and-paste-in-tmux/)
+* [Binding Keys in tmux](https://www.seanh.cc/2020/12/28/binding-keys-in-tmux/)
+* [Setting Options in tmux](https://www.seanh.cc/2020/12/28/setting-options-in-tmux/)
+* [How to Make tmux’s “Windows” Behave like Browser Tabs](https://www.seanh.cc/2020/12/30/how-to-make-tmux's-windows-behave-like-browser-tabs/)
+* [Browser-like Search Shortcuts for tmux](https://www.seanh.cc/2020/12/31/browser-like-search-shortcuts-for-tmux/)
+* tmux plugins I use:
+  * [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
+  * [tmux-sensible](https://github.com/tmux-plugins/tmux-sensible)
+  * [tmux-yank](https://github.com/tmux-plugins/tmux-yank)
+  * [tmux-pain-control](https://github.com/tmux-plugins/tmux-pain-control)
+  * [tmux-sessionist](https://github.com/tmux-plugins/tmux-sessionist)
+  * [tmux-prefix-highlight](https://github.com/tmux-plugins/tmux-prefix-highlight)
+  * [tmux-better-mouse-mode](https://github.com/NHDaly/tmux-better-mouse-mode)
+  * [tmux-open](https://github.com/tmux-plugins/tmux-open)
+
 Usage
 -----
 
