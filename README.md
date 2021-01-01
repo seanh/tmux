@@ -44,6 +44,7 @@ Usage
 
 Either <kbd><kbd>Ctrl</kbd> + <kbd>a</kbd></kbd> or <kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> works as tmux's prefix key.
 
+<kbd><kbd><kbd>Ctrl</kbd> + <kbd>a</kbd></kbd> <kbd>a</kbd></kbd> or
 <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>b</kbd></kbd> sends the prefix key into a nested tmux.
 
 ### Tabs ("windows")
@@ -54,9 +55,26 @@ Either <kbd><kbd>Ctrl</kbd> + <kbd>a</kbd></kbd> or <kbd><kbd>Ctrl</kbd> + <kbd>
   and right
 * <kbd><kbd>Alt</kbd> + <kbd>1</kbd> &hellip; <kbd>8</kbd></kbd> jumps to tab 1&hellip;8
 * <kbd><kbd>Alt</kbd> + <kbd>9</kbd></kbd> jumps to the last tab
-* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd></kbd> goes back to the tab you were last in
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd></kbd>
+  or <kbd><kbd><kbd>Ctrl</kbd> + <kbd>a</kbd></kbd> <kbd><kbd>Ctrl</kbd> + <kbd>a</kbd></kbd></kbd>
+  goes back to the tab you were last in
 
 ### Panes
+
+Pane commands from [tmux-pain-control](https://github.com/tmux-plugins/tmux-pain-control):
+
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>-</kbd></kbd> splits the current pane horizontally
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>|</kbd></kbd> splits the current pane vertically
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>\\</kbd></kbd> splits the current pane full-width horizontally
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>_</kbd></kbd> splits the current pane full-width vertically
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>h</kbd>, <kbd>j</kbd>, <kbd>k</kbd> or <kbd>l</kbd></kbd>
+  or
+  <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Ctrl</kbd> + <kbd>h</kbd>, <kbd>j</kbd>, <kbd>k</kbd> or <kbd>l</kbd></kbd></kbd>
+  move to the pane on the left, below, on the right or above
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>&lt;</kbd></kbd> and <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>&gt;</kbd></kbd>
+  move the current pane left and right
+
+My own bindings:
 
 * <kbd>F11</kbd> zooms or unzooms the current pane
 
