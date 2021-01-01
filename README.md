@@ -186,8 +186,8 @@ File and URL opening shortcuts from [tmux-open](https://github.com/tmux-plugins/
 
 Session-management shortcuts from [tmux-sessionist](https://github.com/tmux-plugins/tmux-sessionist):
 
-* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>g</kbd></kbd> lists open sessions and lets you change to one of them
-  (this doesn't seem to be as nice as the built in <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>s</kbd></kbd>)
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>g</kbd></kbd> lists open sessions and lets you change to one of them  
+  (doesn't seem to be as nice as the built in <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>s</kbd></kbd>)
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>s</kbd></kbd></kbd> changes the the last session
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>c</kbd></kbd></kbd> creates a new session, prompting your for a session name, and
   changes to the new session
