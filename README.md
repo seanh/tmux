@@ -111,6 +111,12 @@ More copy & paste shortcuts from [tmux-yank](https://github.com/tmux-plugins/tmu
 
 I use tmux's vi-style copy mode keybindings. When in copy mode:
 
+* <kbd>Space</kbd> or <kbd>v</kbd> begins a selection.  
+  Selections made with the keyboard don't get copied into the system's primary selection.  
+  <kbd>y</kbd> or <kbd><kbd>Ctrl</kbd> + <kbd>c</kbd></kbd> copies the selection into the system clipboard.  
+  <kbd>Enter</kbd> copies the selection into a tmux paste buffer and exits copy mode.  
+  <kbd><kbd>Shift</kbd> + <kbd>y</kbd></kbd> copies the selection into a tmux paste buffer and pastes it onto the command line.
+
 * <kbd>Esc</kbd> clears the selection and stays in copy mode
 
 * <kbd>q</kbd> clears the selection and exits copy mode
