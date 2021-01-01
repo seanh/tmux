@@ -76,10 +76,13 @@ Either <kbd><kbd>Ctrl</kbd> + <kbd>a</kbd></kbd> or <kbd><kbd>Ctrl</kbd> + <kbd>
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd></kbd>
   or <kbd><kbd><kbd>Ctrl</kbd> + <kbd>a</kbd></kbd> <kbd><kbd>Ctrl</kbd> + <kbd>a</kbd></kbd></kbd>
   goes back to the tab you were last in
-* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>,</kbd></kbd> renames the current window
-* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>&</kbd></kbd> kills the current window
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>,</kbd></kbd> renames the current tab
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>&</kbd></kbd> kills the current tab
 
 ### Panes
+
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>x</kbd></kbd> kills the current pane
+* <kbd>F11</kbd> zooms or unzooms the current pane
 
 Pane commands from [tmux-pain-control](https://github.com/tmux-plugins/tmux-pain-control):
 
@@ -94,11 +97,6 @@ Pane commands from [tmux-pain-control](https://github.com/tmux-plugins/tmux-pain
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>;</kbd></kbd> moves to the last pane
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>&lt;</kbd></kbd> and <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>&gt;</kbd></kbd>
   move the current pane left and right
-* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>x</kbd></kbd> kills the current pane
-
-My own bindings:
-
-* <kbd>F11</kbd> zooms or unzooms the current pane
 
 ### Copy & Paste
 
