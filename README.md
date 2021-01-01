@@ -76,6 +76,7 @@ Pane commands from [tmux-pain-control](https://github.com/tmux-plugins/tmux-pain
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>;</kbd></kbd> moves to the last pane
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>&lt;</kbd></kbd> and <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>&gt;</kbd></kbd>
   move the current pane left and right
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>x</kbd></kbd> kills the current pane
 
 My own bindings:
 
@@ -108,6 +109,36 @@ More copy & paste shortcuts from [tmux-yank](https://github.com/tmux-plugins/tmu
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>Page Up</kbd></kbd> or just <kbd><kbd>Shift</kbd> + <kbd>Page Up</kbd></kbd> enters copy mode and scrolls up by one page
 * You can also enter copy mode by scrolling with the mouse wheel or by clicking-and-dragging, double-clicking or triple-clicking with the <kbd>Left Mouse Button</kbd>
 
+I use tmux's vi-style copy mode keybindings. When in copy mode:
+
+* <kbd>Esc</kbd> clears the selection and stays in copy mode
+
+* <kbd>q</kbd> clears the selection and exits copy mode
+
+* <kbd>h</kbd>, <kbd>j</kbd>, <kbd>k</kbd> and <kbd>l</kbd> move left, down, up and right
+
+* <kbd>w</kbd>, <kbd>W</kbd>, <kbd>b</kbd>, <kbd>B</kbd>, <kbd>e</kbd> and <kbd>E</kbd> move forward and backward a word at a time, like in vim
+
+* <kbd>$</kbd> moves to the end of the line and <kbd>0</kbd> goes to the start of the line. <kbd>^</kbd> goes to the first non-blank character on the line
+
+* <kbd>g</kbd> goes to the beginning of the scrollback history (the top) and <kbd>G</kbd> goes to the end (the bottom)
+
+* <kbd>v</kbd> enables block selection, like <kbd><kbd>Ctrl</kbd> + <kbd>v</kbd></kbd> (visual block mode) in vim.
+
+* <kbd>V</kbd> selects the entire current line, same as in vim (in vim <kbd>V</kbd> enters visual line mode). Once you've selected a line you can move the cursor
+  up and down to select more lines
+
+* <kbd>/</kbd> begins a forward (downward) search and <kbd>?</kbd> begins a backward (upwards) search. <kbd>n</kbd> and <kbd>N</kbd> go to the next and previous
+  search match.
+
+* <kbd>f</kbd> jumps forward to the next occurrence of a character on the same line. For example <kbd><kbd>f</kbd> <kbd>s</kbd></kbd> jumps to the next `s`.
+  <kbd>F</kbd> jumps backward. <kbd>;</kbd> repeats the jump (goes to the _next_ `s`), <kbd>,</kbd> goes to the _previous_ match. <kbd>t</kbd> and <kbd>T</kbd> 
+  are the same as <kbd>f</kbd> and <kbd>F</kbd> but they jump the cursor to the character _before_ the matching character, instead of on top of the match.
+
+* When the cursor is on an opening bracket <kbd>%</kbd> moves to the closing bracket
+
+* <kbd>D</kbd> copies from the cursor to end of line and exits copy mode
+
 ### Opening files and URLs
 
 File and URL opening shortcuts from [tmux-open](https://github.com/tmux-plugins/tmux-open):
@@ -130,10 +161,12 @@ File and URL opening shortcuts from [tmux-open](https://github.com/tmux-plugins/
 ### Sessions
 
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>$</kbd></kbd> renames the current session
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>s</kbd></kbd> lists open sessions and lets you change to one of them
 
 Session-management shortcuts from [tmux-sessionist](https://github.com/tmux-plugins/tmux-sessionist):
 
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>g</kbd></kbd> lists open sessions and lets you change to one of them
+  (this doesn't seem to be as nice as the built in <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>s</kbd></kbd>)
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>s</kbd></kbd></kbd> changes the the last session
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>c</kbd></kbd></kbd> creates a new session, prompting your for a session name, and
   changes to the new session
