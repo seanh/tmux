@@ -58,6 +58,8 @@ Either <kbd><kbd>Ctrl</kbd> + <kbd>a</kbd></kbd> or <kbd><kbd>Ctrl</kbd> + <kbd>
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd></kbd>
   or <kbd><kbd><kbd>Ctrl</kbd> + <kbd>a</kbd></kbd> <kbd><kbd>Ctrl</kbd> + <kbd>a</kbd></kbd></kbd>
   goes back to the tab you were last in
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>,</kbd></kbd> renames the current window
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>&</kbd></kbd> kills the current window
 
 ### Panes
 
@@ -71,6 +73,7 @@ Pane commands from [tmux-pain-control](https://github.com/tmux-plugins/tmux-pain
   or
   <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Ctrl</kbd> + <kbd>h</kbd>, <kbd>j</kbd>, <kbd>k</kbd> or <kbd>l</kbd></kbd></kbd>
   move to the pane on the left, below, on the right or above
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>;</kbd></kbd> moves to the last pane
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>&lt;</kbd></kbd> and <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>&gt;</kbd></kbd>
   move the current pane left and right
 
@@ -91,6 +94,7 @@ See [Copy & Paste in tmux](https://www.seanh.cc/2020/12/27/copy-and-paste-in-tmu
   <kbd><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>v</kbd></kbd> in GNOME Terminal or st
 * <kbd>Enter</kbd> copies the selected text into a tmux paste buffer and exits copy mode
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>]</kbd></kbd> pastes from the most recent tmux paste buffer
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>=</kbd></kbd> lists all tmux paste buffers and lets you choose one to paste from
 
 More copy & paste shortcuts from [tmux-yank](https://github.com/tmux-plugins/tmux-yank):
 
@@ -125,6 +129,8 @@ File and URL opening shortcuts from [tmux-open](https://github.com/tmux-plugins/
 
 ### Sessions
 
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>$</kbd></kbd> renames the current session
+
 Session-management shortcuts from [tmux-sessionist](https://github.com/tmux-plugins/tmux-sessionist):
 
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>g</kbd></kbd> lists open sessions and lets you change to one of them
@@ -134,3 +140,9 @@ Session-management shortcuts from [tmux-sessionist](https://github.com/tmux-plug
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>x</kbd></kbd></kbd> kills the current session and changes to another session
   (if there are any) or exits tmux (if there aren't any other sessions)
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>@</kbd></kbd> breaks the current pane out into a new session
+
+### Detaching clients
+
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>d</kbd></kbd> detaches the current client from the current session
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>d</kbd></kbd></kbd> lists all clients attached to the current session and lets you
+choose one to detach
