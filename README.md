@@ -143,7 +143,7 @@ I use tmux's vi-style copy mode keybindings. When in copy mode:
 
 * <kbd>g</kbd> goes to the beginning of the scrollback history (the top) and <kbd>G</kbd> goes to the end (the bottom)
 
-* <kbd>v</kbd> enables block selection, like <kbd><kbd>Ctrl</kbd> + <kbd>v</kbd></kbd> (visual block mode) in vim.
+* <kbd>r</kbd> enables rectangle selection
 
 * <kbd>V</kbd> selects the entire current line, same as in vim (in vim <kbd>V</kbd> enters visual line mode). Once you've selected a line you can move the cursor
   up and down to select more lines
