@@ -104,6 +104,14 @@ More copy & paste shortcuts from [tmux-yank](https://github.com/tmux-plugins/tmu
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>Page Up</kbd></kbd> or just <kbd><kbd>Shift</kbd> + <kbd>Page Up</kbd></kbd> enters copy mode and scrolls up by one page
 * You can also enter copy mode by scrolling with the mouse wheel or by clicking-and-dragging, double-clicking or triple-clicking with the <kbd>Left Mouse Button</kbd>
 
+### Opening files and URLs
+
+File and URL opening shortcuts from [tmux-open](https://github.com/tmux-plugins/tmux-open):
+
+* <kbd>o</kbd> in copy mode opens the selected file or URL using `open` (macOS) or `xdg-open` (Linux)
+* <kbd><kbd>Ctrl</kbd> + <kbd>o</kbd></kbd> opens the selected file in `$EDITOR`
+* <kbd><kbd>Ctrl</kbd> + <kbd>s</kbd></kbd> searches for the selected text in a browser
+
 ### Reloading
 
 *  <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>r</kbd></kbd></kbd> reloads the `~/.tmux.conf` file
@@ -114,3 +122,15 @@ More copy & paste shortcuts from [tmux-yank](https://github.com/tmux-plugins/tmu
    (you can also just run `~/.tmux/plugins/tpm/bin/update_plugins all`)
 *  <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Alt</kbd> + <kbd>u</kbd></kbd></kbd> uninstalls plugins that're no longer in the `~/.tmux.conf` file
    (you can also just run `~/.tmux/plugins/tpm/bin/clean_plugins`)
+
+### Sessions
+
+Session-management shortcuts from [tmux-sessionist](https://github.com/tmux-plugins/tmux-sessionist):
+
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>g</kbd></kbd> lists open sessions and lets you change to one of them
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>s</kbd></kbd></kbd> changes the the last session
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>c</kbd></kbd></kbd> creates a new session, prompting your for a session name, and
+  changes to the new session
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>x</kbd></kbd></kbd> kills the current session and changes to another session
+  (if there are any) or exits tmux (if there aren't any other sessions)
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>@</kbd></kbd> breaks the current pane out into a new session
