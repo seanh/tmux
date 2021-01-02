@@ -78,7 +78,7 @@ Either <kbd><kbd>Ctrl</kbd> + <kbd>a</kbd></kbd> or <kbd><kbd>Ctrl</kbd> + <kbd>
 * <kbd><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Left</kbd></kbd> and <kbd><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Right</kbd></kbd> move the current tab left
   and right
 * <kbd><kbd>Alt</kbd> + <kbd>1</kbd> &hellip; <kbd>8</kbd></kbd> jumps to tab 1&hellip;8
-* <kbd><kbd>Alt</kbd> + <kbd>9</kbd></kbd> jumps to the last tab
+* <kbd><kbd>Alt</kbd> + <kbd>9</kbd></kbd> jumps back to the last tab
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd></kbd>
   or <kbd><kbd><kbd>Ctrl</kbd> + <kbd>a</kbd></kbd> <kbd><kbd>Ctrl</kbd> + <kbd>a</kbd></kbd></kbd>
   goes back to the tab you were last in
@@ -100,15 +100,16 @@ Pane commands from [tmux-pain-control](https://github.com/tmux-plugins/tmux-pain
   or
   <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Ctrl</kbd> + <kbd>h</kbd>, <kbd>j</kbd>, <kbd>k</kbd> or <kbd>l</kbd></kbd></kbd>
   move to the pane on the left, below, on the right or above
-* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>;</kbd></kbd> moves to the last pane
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>;</kbd></kbd> moves back to the last pane
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>&lt;</kbd></kbd> and <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>&gt;</kbd></kbd>
   move the current pane left and right
 
 ### Copy & Paste
 
-* Click-and-drag to select text and copy it into the primary selection
-* Double-click on a word to select the word and copy it into the primary selection
-* Triple-click on a line to select the line and copy it into the primary selection
+* Click-and-drag to select text
+* Double-click on a word to select the word
+* Triple-click on a line to select the line
+* Selecting text with the mouse automatically copies it into the primary selection and into a tmux paste buffer
 * <kbd>Middle Mouse Button</kbd> pastes from the primary selection (you don't need to hold down <kbd>Shift</kbd>)
 * <kbd>y</kbd> or <kbd><kbd>Ctrl</kbd> + <kbd>c</kbd></kbd> copies the selected text into the system clipboard
 * To paste from the system clipboard just use your terminal emulator's paste command:
@@ -132,10 +133,13 @@ More copy & paste shortcuts from [tmux-yank](https://github.com/tmux-plugins/tmu
 I use tmux's vi-style copy mode keybindings. When in copy mode:
 
 * <kbd>Space</kbd> or <kbd>v</kbd> begins a selection.  
-  Selections made with the keyboard don't get copied into the system's primary selection.  
-  <kbd>y</kbd> or <kbd><kbd>Ctrl</kbd> + <kbd>c</kbd></kbd> copies the selection into the system clipboard.  
-  <kbd>Enter</kbd> copies the selection into a tmux paste buffer and exits copy mode.  
-  <kbd><kbd>Shift</kbd> + <kbd>y</kbd></kbd> copies the selection into a tmux paste buffer and pastes it onto the command line.
+  Selections made with the keyboard don't get automatically copied into the system's primary selection or into a tmux paste buffer.
+
+* <kbd>y</kbd> or <kbd><kbd>Ctrl</kbd> + <kbd>c</kbd></kbd> copies the selection into the system clipboard and into a tmux paste buffer.
+
+* <kbd>Enter</kbd> copies the selection into a tmux paste buffer and exits copy mode.
+
+* <kbd><kbd>Shift</kbd> + <kbd>y</kbd></kbd> copies the selection into a tmux paste buffer and pastes it onto the command line.
 
 * <kbd>Esc</kbd> clears the selection and stays in copy mode
 
@@ -163,14 +167,14 @@ I use tmux's vi-style copy mode keybindings. When in copy mode:
 
 * When the cursor is on an opening bracket <kbd>%</kbd> moves to the closing bracket
 
-* <kbd>D</kbd> copies from the cursor to end of line and exits copy mode
+* <kbd>D</kbd> copies the text from the cursor to end of line (including the character under the cursor) into a tmux paste buffer and exits copy mode
 
 ### Opening files and URLs
 
 File and URL opening shortcuts from [tmux-open](https://github.com/tmux-plugins/tmux-open):
 
 * <kbd>o</kbd> in copy mode opens the selected file or URL using `open` (macOS) or `xdg-open` (Linux)  
-  (hint: double-click on a URL with the mouse and then hit <kbd>o</kbd>)
+  (hint: double-click on a filename or URL with the mouse and then hit <kbd>o</kbd>)
 * <kbd><kbd>Ctrl</kbd> + <kbd>o</kbd></kbd> opens the selected file in `$EDITOR`
 * <kbd><kbd>Ctrl</kbd> + <kbd>s</kbd></kbd> searches for the selected text in a browser
 
@@ -194,7 +198,7 @@ Session-management shortcuts from [tmux-sessionist](https://github.com/tmux-plug
 
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>g</kbd></kbd> lists open sessions and lets you change to one of them  
   (doesn't seem to be as nice as the built in <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>s</kbd></kbd>)
-* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>s</kbd></kbd></kbd> changes the the last session
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>s</kbd></kbd></kbd> changes back to the last session
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>c</kbd></kbd></kbd> creates a new session, prompting your for a session name, and
   changes to the new session
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>x</kbd></kbd></kbd> kills the current session and changes to another session
@@ -203,6 +207,6 @@ Session-management shortcuts from [tmux-sessionist](https://github.com/tmux-plug
 
 ### Detaching clients
 
-* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>d</kbd></kbd> detaches the current client from the current session
+* <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>d</kbd></kbd> detaches the current client from tmux
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Shift</kbd> + <kbd>d</kbd></kbd></kbd> lists all clients attached to the current session and lets you
 choose one to detach
