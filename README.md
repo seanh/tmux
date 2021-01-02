@@ -78,10 +78,10 @@ Either <kbd><kbd>Ctrl</kbd> + <kbd>a</kbd></kbd> or <kbd><kbd>Ctrl</kbd> + <kbd>
 * <kbd><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Left</kbd></kbd> and <kbd><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Right</kbd></kbd> move the current tab left
   and right
 * <kbd><kbd>Alt</kbd> + <kbd>1</kbd> &hellip; <kbd>8</kbd></kbd> jumps to tab 1&hellip;8
-* <kbd><kbd>Alt</kbd> + <kbd>9</kbd></kbd> jumps back to the last tab
+* <kbd><kbd>Alt</kbd> + <kbd>9</kbd></kbd> jumps back to the rightmost tab
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd></kbd>
   or <kbd><kbd><kbd>Ctrl</kbd> + <kbd>a</kbd></kbd> <kbd><kbd>Ctrl</kbd> + <kbd>a</kbd></kbd></kbd>
-  goes back to the tab you were last in
+  goes back to the last tab
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>,</kbd></kbd> renames the current tab
 * <kbd><kbd><kbd>Ctrl</kbd> + <kbd>b</kbd></kbd> <kbd>&</kbd></kbd> kills the current tab
 
