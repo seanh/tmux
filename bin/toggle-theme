@@ -1,17 +1,17 @@
 #!/usr/bin/env sh
 set -e
 
-if [ "$(tmux show -gv @light_mode)" = true ]
+if [ "$(tmux show -v @light_mode)" = true ]
 then
-  tmux set -g window-style 'bg=#171421 fg=#D0CFCC'
-  tmux set -g status-style 'bg=#171421 fg=#D0CFCC'
-  tmux set -g pane-border-style 'fg=#444444'
-  tmux set -g pane-active-border-style 'fg=#666666'
-  tmux set -g @light_mode false
+  tmux set window-style 'bg=#171421 fg=#D0CFCC'
+  tmux set status-style 'bg=#171421 fg=#D0CFCC'
+  tmux set pane-border-style 'fg=#444444'
+  tmux set pane-active-border-style 'fg=#666666'
+  tmux set @light_mode false
 else
-  tmux set -g window-style 'bg=#FFFFFF fg=#171421'
-  tmux set -g status-style 'bg=#FFFFFF fg=#171421'
-  tmux set -g pane-border-style 'fg=#DDDDDD bg=#FFFFFF'
-  tmux set -g pane-active-border-style 'fg=#AAAAAA bg=#FFFFFF'
-  tmux set -g @light_mode true
+  tmux set window-style 'bg=#FFFFFF fg=#171421'
+  tmux set status-style 'bg=#FFFFFF fg=#171421'
+  tmux set pane-border-style 'fg=#DDDDDD bg=#FFFFFF'
+  tmux set pane-active-border-style 'fg=#AAAAAA bg=#FFFFFF'
+  tmux set @light_mode true
 fi
