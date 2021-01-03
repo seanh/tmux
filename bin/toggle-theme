@@ -1,17 +1,21 @@
 #!/usr/bin/env sh
 set -e
 
-if [ "$(tmux show -gv @light_mode)" = true ]
-then
-  tmux set -g window-style 'bg=#171421 fg=#D0CFCC'
-  tmux set -g status-style 'bg=#171421 fg=#D0CFCC'
-  tmux set -g pane-border-style 'fg=#444444'
-  tmux set -g pane-active-border-style 'fg=#666666'
-  tmux set -g @light_mode false
-else
-  tmux set -g window-style 'bg=#FFFFFF fg=#171421'
-  tmux set -g status-style 'bg=#FFFFFF fg=#171421'
-  tmux set -g pane-border-style 'fg=#DDDDDD bg=#FFFFFF'
-  tmux set -g pane-active-border-style 'fg=#AAAAAA bg=#FFFFFF'
-  tmux set -g @light_mode true
-fi
+default_window_style='fg=#d0cfcc,bg=#171421'
+alternate_window_style='fg=#171421,bg=#ffffff'
+
+current_window_style=$(tmux show -Av window-style)
+
+case $current_window_style in
+    $default_window_style|'default')
+        # Change to the alternate window style.
+        tmux set window-style $alternate_window_style
+        tmux set pane-border-style 'fg=#dddddd,bg=#ffffff'
+        tmux set pane-active-border-style 'fg=#aaaaaa,bg=#ffffff'
+        ;;
+    *)
+        # Change back to the default window style.
+        tmux set window-style $default_window_style
+        tmux set pane-border-style 'fg=#444444'
+        tmux set pane-active-border-style 'fg=#666666'
+esac
