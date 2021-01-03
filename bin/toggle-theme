@@ -1,9 +1,10 @@
 #!/usr/bin/env sh
+#
+# Toggle the current window (all panes) between light and dark themes.
 set -e
 
 default_window_style='fg=#d0cfcc,bg=#171421'
 alternate_window_style='fg=#171421,bg=#ffffff'
-
 current_window_style=$(tmux show -Av window-style)
 
 case $current_window_style in
@@ -18,4 +19,5 @@ case $current_window_style in
         tmux set window-style $default_window_style
         tmux set pane-border-style 'fg=#444444'
         tmux set pane-active-border-style 'fg=#666666'
+        ;;
 esac
